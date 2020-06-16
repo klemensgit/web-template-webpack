@@ -5,8 +5,8 @@ module.exports = {
     mode: "development",
     devtool: "source-map",
     entry: {
-        style:"./sass/style.scss",
-        scripts:"./js/scripts.js"
+        "css/style.min":"./sass/style.scss",
+        "js/scripts.min":"./js/scripts.js"
     },
     output:{
         filename: "[name].js",
