@@ -3,16 +3,16 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-module.exports = {
-    mode: "development",
-    devtool: "source-map",
+
+var config = {
     entry: {
-        "css/style.min":"./sass/style.scss",
-        "js/scripts.min":"./js/scripts.js"
+        //"css/style.min":"./sass/style.scss",
+        "scripts.min":"./js/scripts.js"
     },
     output:{
-        filename: "[name].[contentHash].js",
-        path: path.resolve(__dirname, "vendor")
+        filename: "js/[name].[contentHash].js",
+        path: path.resolve(__dirname, "vendor"),
+        publicPath: "./vendor/" //pot, da HtmlWebpackPlugin ve kakšno pot nastavit, ko injecta hash file v head
     },
     module: {
         rules:[
@@ -40,11 +40,9 @@ module.exports = {
                 exclude: /node_modules/,
                 use:[
                     {
-                        loader: MiniCssExtractPlugin.loader,
-                        options:{
-                            reloadAll: true
-                        }
+                        loader: MiniCssExtractPlugin.loader
                     },
+                    //'style-loader',
                     'css-loader',
                     {
                         loader: 'postcss-loader',
@@ -62,7 +60,7 @@ module.exports = {
     plugins:[
         // extrakta javascript css zapis iz script.js file-a v svoj css file.
         new MiniCssExtractPlugin({
-            filename: "[name].[contentHash].css",
+            filename: "css/[name].[contentHash].css",
         }),
         // počisti odvečne hashfile, ki se generirajo z vsako spremembo.
         new CleanWebpackPlugin(),
@@ -74,4 +72,18 @@ module.exports = {
         })
 
     ]
+};
+
+
+module.exports = (env, argv) => {
+
+    if (argv.mode === 'development') {
+      config.devtool = 'source-map';
+    }
+  
+    if (argv.mode === 'production') {
+      //...
+    }
+  
+    return config;
 };

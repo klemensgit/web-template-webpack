@@ -1,3 +1,7 @@
+
+import "../sass/style.scss";
+//import "../lib/jquery.min.js";
+
 $(document).ready(function(){
     // enter code here
 
@@ -40,5 +44,7 @@ $(document).ready(function(){
         return "bla";
     }
 
-    for (const wow of objects) {console.log(wow)}
+    $('.btn-standard').on('click', function(){
+        console.log("wii");
+    })
 });
