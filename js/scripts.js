@@ -39,4 +39,6 @@ $(document).ready(function(){
     function getAll(){
         return "bla";
     }
+
+    for (const wow of objects) {console.log(wow)}
 });

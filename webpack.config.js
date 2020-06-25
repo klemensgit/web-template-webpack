@@ -17,6 +17,25 @@ module.exports = {
     module: {
         rules:[
             {
+                test: /\.m?js$/,
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: [
+                            [
+                                '@babel/preset-env',
+                                {
+                                    "targets": {
+                                        "ie": "11"
+                                    }
+                                }
+                            ]
+                        ]
+                    }
+                }
+            },
+            {
                 test: /.(scss|css)$/,
                 exclude: /node_modules/,
                 use:[
@@ -27,7 +46,14 @@ module.exports = {
                         }
                     },
                     'css-loader',
-                    'postcss-loader',
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            plugins: (loader) => [
+                                require('autoprefixer')
+                            ]
+                        }
+                    },
                     'sass-loader'
                 ]
             }
