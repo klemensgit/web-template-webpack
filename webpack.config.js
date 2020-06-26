@@ -7,7 +7,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 var config = {
     entry: {
         //"css/style.min":"./sass/style.scss",
-        "scripts.min":"./js/scripts.js"
+        "vendor.min": "./lib/vendor.js",
+        "scripts.min": "./js/scripts.js"
     },
     output:{
         filename: "js/[name].[contentHash].js",
@@ -60,7 +61,8 @@ var config = {
     plugins:[
         // extrakta javascript css zapis iz script.js file-a v svoj css file.
         new MiniCssExtractPlugin({
-            filename: "css/[name].[contentHash].css",
+            filename: "css/style.min.[contentHash].css",
+            //filename: "css/[name].[contentHash].css", če žeilimo da se ohrani ime datoteke iz katere extraktamo css v tem primeru script.js
         }),
         // počisti odvečne hashfile, ki se generirajo z vsako spremembo.
         new CleanWebpackPlugin(),
@@ -70,7 +72,6 @@ var config = {
             inject:'head',
             filename:'sub_tpl_head.php'
         })
-
     ]
 };
 

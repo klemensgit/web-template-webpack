@@ -41,7 +41,7 @@ $(document).ready(function(){
     getAjaxRespons1();
 
     function getAll(){
-        return "bla";
+        return "bla1";
     }
 
     $('.btn-standard').on('click', function(){
