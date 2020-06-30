@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <h1>Wellcome to</h1>
-        <p>Web template</p>
+        <p>Webpack Web template</p>
         <div class="btn-standard">About</div>
         <?php echo showData(); ?>
     </div>  

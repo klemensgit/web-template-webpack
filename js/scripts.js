@@ -1,6 +1,5 @@
 
 import "../sass/style.scss";
-//import "../lib/jquery.min.js";
 
 $(document).ready(function(){
     // enter code here
