@@ -45,5 +45,11 @@ $(document).ready(function(){
 
     $('.btn-standard').on('click', function(){
         console.log("wii");
-    })
+    });
+
+    $('.single-item').slick({
+        infinite: true,
+        slidesToShow: 2,
+        slidesToScroll: 1
+    });
 });

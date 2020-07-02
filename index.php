@@ -13,7 +13,18 @@
         <p>Webpack Web template</p>
         <div class="btn-standard">About</div>
         <?php echo showData(); ?>
+
+        <div class="single-item">
+            <div style="background-image:url('./images/1.jpg');"></div>
+            <div style="background-image:url('./images/2.jpg');"></div>
+            <div style="background-image:url('./images/3.jpg');"></div>
+        </div>
     </div>  
+    
+    <div class="proba">
+        <p>Proba</p>
+        <div class="title">jj</div>
+    </div>
 </body>
 
 </html>

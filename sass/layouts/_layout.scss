@@ -34,6 +34,15 @@ h4{
     color:green;
 }
 
+.single-item{
+    div{
+        height:400px; 
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
+
 ::placeholder{
-    color:red;
+    color:blue;
 }
