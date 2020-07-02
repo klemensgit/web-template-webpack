@@ -24,11 +24,11 @@ var VENDOR_EXT_LIB = [
 
 /** -------------------------------------- development config ------------------------------------------- */
 var buildDevConfig = {
-    devtool: 'eval-cheap-module-source-map',
+    devtool: 'source-map',
     entry: {
         //"css/style.min":"./sass/style.scss",
         vendor: VENDOR_EXT_LIB,
-        scripts: "./js/scripts.js"
+        scripts: ["./js/scripts.js", "./sass/style.scss"]
     },
     output:{
         filename: "js/[name].[contentHash].js",

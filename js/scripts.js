@@ -1,5 +1,4 @@
-
-import "../sass/style.scss";
+//import "../sass/style.scss";
 
 $(document).ready(function(){
     // enter code here
@@ -47,7 +46,7 @@ $(document).ready(function(){
         console.log("wii");
     });
 
-    $('.single-item').slick({
+    $('.single-item').not('.slick-initialized').slick({
         infinite: true,
         slidesToShow: 2,
         slidesToScroll: 1
